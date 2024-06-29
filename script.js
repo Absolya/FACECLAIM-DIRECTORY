@@ -1,10 +1,10 @@
-
     $(document).ready(function() {
-        // Initialize Isotope
+        // Initialize Isotope with sorting by name
         var $gallery = $('#gallery').isotope({
             itemSelector: '.faceclaim',
             layoutMode: 'fitRows',
             transitionDuration: '0.5s',
+            sortBy: 'name',
             getSortData: {
                 name: function(element) {
                     return $(element).find('p:first').text().toLowerCase();
@@ -52,16 +52,22 @@
         // Trier les célébrités par nom
         $('#sort-by-name').click(function() {
             $gallery.isotope({ sortBy: 'name' });
+            // Mettre à jour le bouton actif
+            $(this).addClass('active').siblings().removeClass('active');
         });
 
         // Trier les célébrités par sous-titre
         $('#sort-by-subtitle').click(function() {
             $gallery.isotope({ sortBy: 'subtitle' });
+            // Mettre à jour le bouton actif
+            $(this).addClass('active').siblings().removeClass('active');
         });
 
         // Fonction pour combiner les filtres
         function concatFilters(filters) {
             return Object.values(filters).map(value => value).join('');
         }
-    });
 
+        // Ajouter la classe 'active' au bouton de tri par nom par défaut
+        $('#sort-by-name').addClass('active');
+    });
