@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #1c1c1c;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -107,6 +107,40 @@ a:active {
         color:black;		/* Couleur de fond du bouton actif */
     }
 
+  
+        .search-bar {
+            margin-top: 0px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar button {
+     background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 9px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 68px;
+    text-align: center;
+        }
+
+        .search-bar button:hover {
+            background-color: #c82333;
+        }
+
+        /* Highlight class to put emphasis on search results */
+        .faceclaim.highlight {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
 .filter-gender-header {
     display: flex;
     flex-direction: row;
@@ -202,6 +236,7 @@ aside input {
     gap: 0.28rem;
     flex-direction: column;
     margin-bottom: 8px;
+	margin-top: -10px;
 }
 
 
@@ -377,7 +412,7 @@ h3 {
     font-size: 11px;
     padding: 10px;
     position: absolute;
-    top: 65px;
+    top: 50px;
     width: 200px;
     text-transform: uppercase;
     right: 20px;
@@ -386,5 +421,21 @@ h3 {
 	::-webkit-scrollbar {
     width: 5px;
     border: 2px solid #fff;
-    background-color: #000;
+    background-color: #F0F0F0;
+}
+
+.bienvenue {
+	text-align: justify;
+    font-size: 12px;
+    margin-bottom: 10px;
+    line-height: 16px;
+}
+
+.titre_fclaim {
+	    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: georgia;
+    letter-spacing: 4px;
+    margin-bottom: 3px;
 }
