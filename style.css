@@ -140,6 +140,21 @@ a:active {
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
+		
+		/* Counter display */
+.counter {
+     margin: auto;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: white;
+    width: 600px;
+    color: black;
+    padding: 3px;
+    margin-top: -10px;
+        }
+		
+		
 
 .filter-gender-header {
     display: flex;
@@ -214,7 +229,7 @@ a:active {
 
 .right-side-overflow {
     overflow: auto;
-    height: 400px;
+    height: 460px;
 }
 
 aside input {
@@ -310,7 +325,7 @@ aside input {
 main {
     flex: 1;
     padding: 0.5rem 4rem 0rem 4rem;
-    height: 768px;
+    height: 760px;
     overflow: auto;
 }
 
