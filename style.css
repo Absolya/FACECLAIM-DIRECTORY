@@ -413,7 +413,7 @@ aside input {
    
 main {
     flex: 1;
-    padding: 0.5rem 4rem 0rem 4rem;
+    padding: 0.5rem 4rem 0rem 5rem;
     height: 742px;
     overflow: auto;
 }
