@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faceclaims</title>
+    <link href="stylefc.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Faceclaims</h1>
+		<div class="bloc_res"><div class="resume">
+		Selon le traits de couleurs sous chaque featuring, cela indique son nombre de ressources mis à disposition ! La référence du nombreuse de ressources étant définis par le site : safeboru ! De plus, vous pourrez cliquer sur chaque featuring, celui-ci vous redirigera sur sa galerie Safeboru !
+		</div><div class="titre_resume">EXPLICATIONS</div></div>
+		<div class="legendes">
+		<div class="filter-buttons" style="display: flex; justify-content: center;flex-direction: row;">
+		<button data-filter=".all"><span style="color:#fff; --darkreader-inline-color: #000;" data-darkreader-inline-color="">━━━ tous</span></button>
+		<button data-filter=".nombreuse"><span style="color: rgb(128, 211, 128); --darkreader-inline-color: #80d380;" data-darkreader-inline-color="">━━━ ressources nombreuses</span></button>
+		<button data-filter=".modere"><span style="color: rgb(235, 195, 81); --darkreader-inline-color: #ecc557;" data-darkreader-inline-color="">━━━ ressources modérés</span></button>
+		<button data-filter=".rare"><span style="color: rgb(203, 80, 80); --darkreader-inline-color: #cf5d5d;" data-darkreader-inline-color="">━━━ ressources rares</span></button>
+		</div>
+		</div>
+    </div>
+	
+	  <div class="sort-buttons">
+        <button id="sort-by-name">Trier par NOM</button>
+        <button id="sort-by-subtitle">Trier par UNIVERS</button>
+    </div>
+	
+    <div class="filter-gender-header">
+        <div class="filter-buttons">
+		   <button data-filter=".all" style="font-size:18px;line-height:16px;">Tous</button>
+            <button data-filter=".masculins" style="font-size:18px;line-height:16px;letter-spacing: 7px;color: #93b8f1;">Masculins</button>
+            <button data-filter=".feminins" style="font-size:18px;line-height:16px;letter-spacing: 7px;color: #f19397;">Féminins</button>
+            <button data-filter=".non-binaire" style="font-size:18px;line-height:16px;letter-spacing: 7px;color: #ffc107;">Non-binaire</button>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <aside class="left-aside">
+        <input type="text" id="search" placeholder="Rechercher...">
+		
+		 <h3>ÂGE</h3>
+        <div class="filter-buttons" id="filter-age">
+		    <button class="active" data-filter=".all">Tous</button>
+            <button data-filter=".enfants">Enfants</button>
+            <button data-filter=".adolescents">Adolescents</button>
+            <button data-filter=".adultes">Adultes</button>
+            <button data-filter=".anciens">Anciens</button>
+        </div>
+		
+		 <h3>PEAU</h3>
+        <div class="filter-buttons" id="filter-skin">
+		<button class="active" data-filter=".all">Tous</button>
+            <button data-filter=".claire">Claire</button>
+            <button data-filter=".matte">Matte</button>
+            <button data-filter=".sombre">sombre</button>
+            <button data-filter=".autres">Autres</button>
+        </div>
+		
+		 <h3>STYLE</h3>
+        <div class="filter-buttons" id="filter-style">
+		<button class="active" data-filter=".all">Tous</button>
+            <button data-filter=".androgyne">Androgyne</button>
+            <button data-filter=".moderne">Moderne</button>
+            <button data-filter=".fantasy">Fantasy</button>
+            <button data-filter=".historique">Historique</button>
+        </div>
+		
+			 <h3>COULEUR YEUX</h3>
+        <div class="filter-buttons color-circles" id="filter-eyes-color">
+		<button class="active" data-filter=".all"></button>
+            <button data-filter=".ynoir" style="background-color: #000000;"></button>
+            <button data-filter=".ygris" style="background-color: #A9A9A9;"></button>
+            <button data-filter=".ybrun" style="background-color: #8B4513;"></button>
+            <button data-filter=".yrose" style="background-color: #FF69B4;"></button>
+            <button data-filter=".yviolet" style="background-color: #800080;"></button>
+            <button data-filter=".yrouge" style="background-color: #FF0000;"></button>
+            <button data-filter=".yvert" style="background-color: #008000;"></button>
+            <button data-filter=".ybleu" style="background-color: #0000FF;"></button>
+            <button data-filter=".yjaune" style="background-color: #FFFF00;"></button>
+			<button data-filter=".vairons" class="color-circle" style="background: linear-gradient(90deg, red, blue);"></button>
+            <button data-filter=".ymulticolor" class="color-circle" style="background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);"></button>
+        </div>
+		
+		 <h3>COULEUR CHEVEUX</h3>
+        <div class="filter-buttons color-circles" id="filter-hair-color">
+		<button class="active" data-filter=".all"></button>
+		    <button data-filter=".blanc" style="background-color: #fff;"></button>
+            <button data-filter=".noir" style="background-color: #000000;"></button>
+            <button data-filter=".gris" style="background-color: #A9A9A9;"></button>
+            <button data-filter=".brun" style="background-color: #8B4513;"></button>
+            <button data-filter=".roux" style="background-color: #FF4500;"></button>
+            <button data-filter=".blond" style="background-color: #FFD700;"></button>
+            <button data-filter=".rose" style="background-color: #FF69B4;"></button>
+            <button data-filter=".violet" style="background-color: #800080;"></button>
+            <button data-filter=".rouge" style="background-color: #FF0000;"></button>
+            <button data-filter=".vert" style="background-color: #008000;"></button>
+            <button data-filter=".bleu" style="background-color: #0000FF;"></button>
+            <button data-filter=".jaune" style="background-color: #FFFF00;"></button>
+            <button data-filter=".multicolor" class="color-circle" style="background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);"></button>
+        </div>
+		
+		 <h3>CHEVEUX</h3>
+        <div class="filter-buttons" id="filter-hair-length">
+		<button class="active" data-filter=".all">Tous</button>
+            <button data-filter=".chauve">Chauve</button>
+            <button data-filter=".courts">Courts</button>
+            <button data-filter=".mi-long">Mi-long</button>
+            <button data-filter=".long">Long</button>
+            <button data-filter=".très-long">Très long</button>
+        </div>
+		
+		 <h3>AUTRES</h3>
+        <div class="filter-buttons" id="filter-details">
+		<button class="active" data-filter=".all">Tous</button>
+            <button data-filter=".ailes">Ailes</button>
+            <button data-filter=".cicatrices">Cicatrices</button>
+            <button data-filter=".cornes">Cornes</button>
+            <button data-filter=".lunettes">Lunettes</button>
+            <button data-filter=".piercings">Piercings</button>
+            <button data-filter=".tatouages">Tatouages</button>
+            <button data-filter=".traits-animaliers">Traits animaliers</button>
+            <button data-filter=".autres">Autres</button>
+        </div>
+    </aside>
+        <main>	
+				<div class="gallery" id="gallery">
+				
+				
+    <a href="https://safebooru.org/index.php?page=post&s=list&tags=adaman_%28pokemon%29" target="_blank">
+	<div class="faceclaim adultes claire masculins bleu mi-long ybrun historique pokemon nombreuse all" data-category="adultes nombreuse all adultes mi-long masculins bleu historique pokemon">
+        <p>Adamantin</p>
+		<img src="https://i.pinimg.com/564x/71/a4/d7/71a4d7a25ed4005c2c6706917483696e.jpg" alt="adamantin">
+        <p class="subtitle">pokemon : legends arceus</p>
+		<div class="etoile positif"></div>
+    </div></a>
+	
+	  <a href="https://safebooru.org/index.php?page=post&s=list&tags=adnachiel_%28arknights%29+&pid=0" target="_blank">
+	<div class="faceclaim adultes claire masculins blanc courts yjaune moderne arknights rare lunettes autres all" data-category="faceclaim adultes claire masculins blanc court yjaune moderne arknights rare lunettes autres all">
+        <p>Adnachiel</p>
+		<img src="https://safebooru.org//samples/4595/sample_d496104d8f30cd0898e28e37a5e3a697c411b64c.jpg?4790768" alt="adnachiel">
+        <p class="subtitle">arknights</p>
+		<div class="etoile negatif"></div>
+    </div></a>
+				
+     <a href="https://safebooru.org/index.php?page=post&s=list&tags=alban_knox+" target="_blank">
+	<div class="faceclaim adultes claire masculins brun vairons yvert courts ygris moderne nijisanji vtuber lunettes all" data-category="adultes feminins yvert courts ygris brun moderne vairons nijisanji vtuber lunettes all">
+	    <p>Alban Knox</p>
+        <img src="https://i.pinimg.com/564x/4d/03/7d/4d037db17758c59b89ef18fa4d405933.jpg" alt="albanknox">
+        <p class="subtitle">Nijisanji - VTUBER</p>
+		<div class="etoile positif"></div>
+    </div></a>
+	
+	 <a href="https://safebooru.org/index.php?page=post&s=list&tags=ambriel_%28arknights%29+&pid=0" target="_blank">
+	<div class="faceclaim adultes claire feminins rose long yrose moderne arknights modere all" data-category="adultes feminins rose long yrose moderne arknights modere">
+        <p>Ambriel</p>
+		<img src="https://safebooru.org//images/3050/082ff3577f161303aefbdb8e25e7c6509215a46e.jpg?3176255" alt="ambriel">
+        <p class="subtitle">arknights</p>
+		<div class="etoile moyen"></div>
+    </div></a>
+	
+		<a href="https://safebooru.org/index.php?page=post&s=list&tags=amiya_%28arknights%29+" target="_blank">
+	<div class="faceclaim adultes claire feminins brun long ybleu moderne arknights nombreuse all" data-category="faceclaim adultes claire feminins brun long ybleu moderne arknights nombreuse all">
+        <p>Amiya</p>
+		<img src="https://safebooru.org//samples/4619/sample_9420a14e25749e9927bef82013539df68e24b54b.jpg?4932743" alt="amiya">
+        <p class="subtitle">arknights</p>
+		<div class="etoile positif"></div>
+    </div></a>
+	
+    <!-- Ajoutez d'autres éléments de célébrité selon vos besoins -->
+			   
+				
+                <!-- Ajoutez d'autres faceclaims ici -->
+            </div>
+			 </main>
+			 
+        <aside class="right-aside">
+		
+		<div class="reference">Actuellement : 0000 références</div>
+		
+        <h3>Univers</h3>
+        <div class="right-side-overflow"><div class="filter-buttons" id="filter-universe">
+		    <button class="active" data-filter=".all">Tous</button>
+			<button data-filter=".arknights">arknights</button>
+			<button data-filter=".disney">disney</button>
+			<button data-filter=".fate">fate order</button>
+			<button data-filter=".ff">final fantasy</button>
+			<button data-filter=".genshin">genshin impact</button>
+			<button data-filter=".hololive">hololive</button>
+			<button data-filter=".holostar">holostar</button>
+			<button data-filter=".honkai">honkai star rail</button>
+			<button data-filter=".idolmaster">idolmaster</button>
+			<button data-filter=".lol">league of legends</button>
+			<button data-filter=".mha">my hero academia</button>
+		    <button data-filter=".nijisanji">nijisanji</button>
+            <button data-filter=".pokemon">pokémon</button>
+			<button data-filter=".rezero">re:zero</button>
+			<button data-filter=".tokyoghoul">tokyo ghoul</button>
+			<button data-filter=".tokyorevengers">tokyo revengers</button>
+			<button data-filter=".vocaloid">vocaloid</button>
+			<button data-filter=".vtuber">vtuber</button>
+            <button data-filter=".c">C</button>
+        </div></div>
+    </aside>
+</div>
+
+<script src="FCSCRIPT.js"></script>
+
+</body>
+</html>
