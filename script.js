@@ -29,48 +29,44 @@ $(document).ready(function() {
                 var $button = $(this);
                 var filterGroup = $button.closest('.filter-buttons').attr('id');
                 var filterValue = $button.attr('data-filter');
-
-                // Ajouter la classe 'active' au bouton cliqué et la supprimer des autres boutons du même groupe
-                $button.siblings().removeClass('active');
-                $button.addClass('active');
-
-                // Mettre à jour l'objet des filtres
+                
+                // Mettre à jour les filtres actifs
                 filters[filterGroup] = filterValue;
+                var combinedFilter = concatFilters(filters);
 
-                // Combiner tous les filtres actifs
-                var filterString = concatFilters(filters);
-                $gallery.isotope({ filter: filterString });
-                updateTotalCounter(); // Update total counter after filtering
+                // Appliquer les filtres combinés
+                $gallery.isotope({ filter: combinedFilter });
+
+                // Mettre à jour le bouton actif
+                $button.addClass('active').siblings().removeClass('active');
+
+                // Mettre à jour le compteur total
+                updateTotalCounter();
             });
 
-            // Filtrer les célébrités en fonction de la recherche
+            // Recherche de célébrités
             $('#search').on('input', function() {
-                var searchValue = this.value.toLowerCase();
+                var searchValue = $(this).val().toLowerCase();
 
                 $gallery.isotope({
                     filter: function() {
                         var name = $(this).find('p:first').text().toLowerCase();
                         var subtitle = $(this).find('.subtitle').text().toLowerCase();
-                        var matchesSearch = name.indexOf(searchValue) > -1 || subtitle.indexOf(searchValue) > -1;
-
-                        if (matchesSearch) {
-                            $(this).addClass('highlight');
-                        } else {
-                            $(this).removeClass('highlight');
-                        }
-
-                        return matchesSearch;
+                        return name.includes(searchValue) || subtitle.includes(searchValue);
                     }
                 });
-                updateTotalCounter(); // Update total counter after searching
+
+                // Mettre à jour le compteur total
+                updateTotalCounter();
             });
 
-            // Effacer la recherche et réinitialiser les résultats
+            // Effacer la recherche
             $('#reset-search').click(function() {
                 $('#search').val('');
                 $gallery.isotope({ filter: '*' });
-                $('.faceclaim').removeClass('highlight');
-                updateTotalCounter(); // Update total counter after resetting search
+
+                // Mettre à jour le compteur total
+                updateTotalCounter();
             });
 
             // Trier les célébrités par nom
@@ -103,4 +99,9 @@ $(document).ready(function() {
 
             // Initial update of the total counter
             updateTotalCounter();
+
+            // Redirect button click event
+            $('#redirect-button').click(function() {
+                window.open('https://forms.gle/4K2vzJdYpFQupCzi6', '_blank'); // Remplacez par l'URL de votre autre page
+            });
         });
