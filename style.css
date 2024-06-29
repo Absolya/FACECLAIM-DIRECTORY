@@ -268,8 +268,8 @@ aside input {
 }
    
 main {
-        flex: 1;
-    padding: 1rem;
+    flex: 1;
+    padding: 0.5rem 4rem 0rem 4rem;
     height: 800px;
     overflow: auto;
 }
@@ -330,15 +330,15 @@ p.subtitle {
 }
 
 .positif {
-    background-color: rgb(80, 133, 62);
+    background-color: #68BB6C;
 }
 
 .moyen {
-    background-color: rgb(146, 112, 34);
+    background-color: #EBC351;
 }
 
 .negatif {
-    background-color: rgb(129, 37, 37);
+    background-color: #CB5050;
 }
 
 h3 {
