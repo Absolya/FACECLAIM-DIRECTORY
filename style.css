@@ -211,7 +211,7 @@ a:active {
 }
 
 
-#redirect-button {
+.redirect {
     background-color: #000000;
     color: white;
     border: none;
@@ -230,10 +230,14 @@ a:active {
     border-bottom: 3px white solid;
     }
 
-    #redirect-button:hover {
+    .redirect:hover {
         background-color: #E15361;
 		color:white;
     }
+	
+	.redirect a {
+		color:white;
+	}
 
 .container {
     display: flex;
@@ -510,7 +514,7 @@ h3 {
     letter-spacing: 15px;
 	}
 	
-	sstitle {
+	.sstitle {
 	    font-size: 10.5px;
     position: relative;
     font-style: italic;
