@@ -101,6 +101,11 @@ a:active {
     .sort-buttons button:hover {
         background-color: #0056b3; /* Couleur de fond au survol */
     }
+	
+	.sort-buttons button.active {
+        background-color: #fff;
+        color:black;		/* Couleur de fond du bouton actif */
+    }
 
 .filter-gender-header {
     display: flex;
