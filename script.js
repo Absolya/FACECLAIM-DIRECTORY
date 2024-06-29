@@ -15,6 +15,12 @@ $(document).ready(function() {
                 }
             });
 
+            // Function to update total counter
+            function updateTotalCounter() {
+                var total = $gallery.data('isotope').filteredItems.length;
+                $('#total-counter').text(total);
+            }
+
             // Objet pour stocker les filtres actifs
             var filters = {};
 
@@ -34,6 +40,7 @@ $(document).ready(function() {
                 // Combiner tous les filtres actifs
                 var filterString = concatFilters(filters);
                 $gallery.isotope({ filter: filterString });
+                updateTotalCounter(); // Update total counter after filtering
             });
 
             // Filtrer les célébrités en fonction de la recherche
@@ -55,6 +62,7 @@ $(document).ready(function() {
                         return matchesSearch;
                     }
                 });
+                updateTotalCounter(); // Update total counter after searching
             });
 
             // Effacer la recherche et réinitialiser les résultats
@@ -62,6 +70,7 @@ $(document).ready(function() {
                 $('#search').val('');
                 $gallery.isotope({ filter: '*' });
                 $('.faceclaim').removeClass('highlight');
+                updateTotalCounter(); // Update total counter after resetting search
             });
 
             // Trier les célébrités par nom
@@ -91,4 +100,7 @@ $(document).ready(function() {
 
             // Ajouter la classe 'active' au bouton de tri par nom par défaut
             $('#sort-by-name').addClass('active');
+
+            // Initial update of the total counter
+            updateTotalCounter();
         });
