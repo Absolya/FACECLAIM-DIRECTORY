@@ -413,6 +413,17 @@ aside input {
             background-color: #218838;
         }   
    
+.reset-filters-button {
+    background-color: #999999;
+    color: white;
+    border: none;
+    padding: 9px 8px;
+    cursor: pointer;
+    width: 195px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: -7px;
+}
    
    
 main {
